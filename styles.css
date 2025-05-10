@@ -1,0 +1,225 @@
+body {
+    background-color: #101827;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #1f2937;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group:has(#wallet-address) {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+select, input[type="text"], input[type="number"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #374157;
+    border-radius: 5px;
+    background-color: #374157;
+    color: #FFFFFF;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+select:focus, input[type="text"]:focus, input[type="number"]:focus, input[type="file"]:focus {
+    border-color: #2463eb;
+}
+
+select {
+    appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg fill="#4A5B5C" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-color: #374157;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+.qr-code {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+}
+
+#wallet-address {
+    word-break: break-all;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2463eb;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #5A6B6C;
+}
+
+.submit-btn {
+    background-color: #28A745;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.submit-btn:disabled {
+    background-color: #218838; /* A slightly darker/duller shade of the original green */
+    cursor: default; /* Revert to the default cursor */
+    opacity: 0.7; /* Reduce opacity to make it look duller */
+}
+
+.submit-btn:disabled:hover {
+    background-color: #218838; /* Ensure it stays the same color on hover when disabled */
+    cursor: default; /* Revert to the default cursor on hover */
+    opacity: 0.7;
+}
+
+/* Amount Message Styling */
+.amount-message {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.amount-message.error {
+    color: red;
+}
+
+.amount-message.success {
+    color: green;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #1f2937;
+    position: fixed; /* Use fixed positioning */
+    top: 50%;          /* Vertically center */
+    left: 50%;         /* Horizontally center */
+    transform: translate(-50%, -50%); /* Correct for element size */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    text-align: center;
+}
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.close-button:hover {
+    color: white;
+}
+
+/* Modal Icon */
+.modal-icon {
+    margin-bottom: 10px;
+}
+
+.modal-icon img {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+}
+
+#modalOkButton {
+    /* Existing styles */
+    padding: 10px 20px;
+    background-color: #28A745; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    /* New centering styles */
+    display: block;  /* Make it a block-level element */
+    margin: 0 auto; /* Auto margins on left and right */
+    text-align: center; /* Center the text inside */
+}
+
+#modalOkButton:hover {
+    background-color: #218838;
+}
+
+/* Loading Animation */
+.loading-animation {
+    border: 5px solid #f3f3f3; /* Light grey border */
+    border-top: 5px solid #3498db; /* Blue border top */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.modal-message {
+    margin-bottom: 20px;
+}
